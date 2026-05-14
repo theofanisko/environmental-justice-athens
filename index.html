@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Luxury Effect — Environmental Justice Athens</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+  /* ── TOKENS ── */
+  :root {
+    --forest:   #1A3C2A;
+    --forest-light: #2A5C3A;
+    --forest-pale:  #E8F2EC;
+    --forest-mid:   #4A7A5A;
+    --coral:    #D9543A;
+    --coral-light:  #F5EDE9;
+    --coral-mid:    #E8A090;
+    --white:    #FFFFFF;
+    --off-white:#FAFAFA;
+    --gray-100: #F2F2F0;
+    --gray-200: #E0E0DC;
+    --gray-400: #A0A09A;
+    --gray-700: #404038;
+    --black:    #1A1A18;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body:    'DM Sans', sans-serif;
+    --font-mono:    'DM Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--white);
+    color: var(--black);
+    font-size: 16px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--forest);
+    padding: 0 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 56px;
+    border-bottom: 1px solid var(--forest-light);
+  }
+  .nav-logo {
+    font-family: var(--font-body);
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--forest-pale);
+    letter-spacing: 0.02em;
+  }
+  .nav-links {
+    display: flex;
+    gap: 32px;
+  }
+  .nav-links a {
+    font-size: 13px;
+    color: #8CB89C;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--forest-pale); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--forest);
+    padding: 80px 48px 64px;
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    gap: 64px;
+    align-items: end;
+  }
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-family: var(--font-mono);
+    color: var(--coral-mid);
+    margin-bottom: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--coral);
+  }
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: 52px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -0.01em;
+  }
+  .hero-title em {
+    color: var(--coral);
+    font-style: italic;
+  }
+  .hero-sub {
+    font-size: 16px;
+    color: #8CB89C;
+    line-height: 1.7;
+    max-width: 540px;
+    margin-bottom: 32px;
+  }
+  .hero-btns {
+    display: flex;
+    gap: 12px;
+  }
+  .btn-primary {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 24px;
+    background: var(--coral);
+    color: var(--white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .btn-primary:hover { background: #C44430; transform: translateY(-1px); }
+  .btn-secondary {
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 500;
+    padding: 12px 24px;
+    background: transparent;
+    color: var(--forest-pale);
+    border: 1px solid #4A7A5A;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: border-color 0.2s, transform 0.15s;
+  }
+  .btn-secondary:hover { border-color: #8CB89C; transform: translateY(-1px); }
+
+  /* Hero stat card */
+  .hero-stat-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 32px;
+    align-self: center;
+  }
+  .hero-stat-main {
+    font-family: var(--font-display);
+    font-size: 72px;
+    font-weight: 700;
+    color: var(--coral);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .hero-stat-label {
+    font-size: 13px;
+    color: #8CB89C;
+    line-height: 1.5;
+    margin-bottom: 24px;
+  }
+  .hero-stat-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.1);
+    margin-bottom: 20px;
+  }
+  .hero-stat-row {
+    display: flex;
+    gap: 24px;
+  }
+  .hero-stat-mini { flex: 1; }
+  .hero-stat-mini-n {
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .hero-stat-mini-l {
+    font-size: 11px;
+    color: #6A9A7A;
+    margin-top: 2px;
+  }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .stat-cell {
+    padding: 28px 32px;
+    border-right: 1px solid var(--gray-200);
+  }
+  .stat-cell:last-child { border-right: none; }
+  .stat-number {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--coral);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .stat-number.green { color: var(--forest); }
+  .stat-label {
+    font-size: 12px;
+    color: var(--gray-400);
+    line-height: 1.4;
+  }
+
+  /* ── SECTIONS ── */
+  .section {
+    padding: 72px 48px;
+    border-bottom: 1px solid var(--gray-200);
+  }
+  .section:last-of-type { border-bottom: none; }
+  .section-alt { background: var(--off-white); }
+  .section-forest { background: var(--forest); }
+  .section-coral-light { background: var(--coral-light); }
+
+  .section-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coral);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: 36px;
+    font-weight: 500;
+    color: var(--black);
+    line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .section-title.light { color: var(--white); }
+  .section-body {
+    font-size: 15px;
+    color: var(--gray-700);
+    line-height: 1.8;
+    max-width: 640px;
+  }
+  .section-body.light { color: #8CB89C; }
+
+  /* ── FINDINGS GRID ── */
+  .findings-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--gray-200);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 40px;
+  }
+  .finding-card {
+    background: var(--white);
+    padding: 32px;
+  }
+  .finding-num {
+    font-family: var(--font-display);
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 10px;
+  }
+  .finding-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 8px;
+  }
+  .finding-desc {
+    font-size: 13px;
+    color: var(--gray-400);
+    line-height: 1.6;
+  }
+
+  /* ── PIPELINE ── */
+  .pipeline {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 40px;
+    position: relative;
+  }
+  .pipeline::before {
+    content: '';
+    position: absolute;
+    top: 32px;
+    left: 10%;
+    right: 10%;
+    height: 1px;
+    background: var(--gray-200);
+    z-index: 0;
+  }
+  .pipe-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 16px;
+    position: relative;
+    z-index: 1;
+  }
+  .pipe-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+  .pipe-icon.active {
+    background: var(--forest);
+    border-color: var(--forest);
+  }
+  .pipe-title {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 4px;
+  }
+  .pipe-sub {
+    font-size: 11px;
+    color: var(--gray-400);
+    line-height: 1.4;
+  }
+
+  /* ── LUXURY EFFECT CALLOUT ── */
+  .luxury-callout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 40px;
+    border: 1px solid var(--gray-200);
+  }
+  .lux-panel {
+    padding: 40px;
+  }
+  .lux-panel-left { background: var(--forest-pale); }
+  .lux-panel-right { background: var(--coral-light); }
+  .lux-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .lux-label.green { color: var(--forest-mid); }
+  .lux-label.coral { color: var(--coral); }
+  .lux-temp {
+    font-family: var(--font-display);
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .lux-temp.green { color: var(--forest); }
+  .lux-temp.coral { color: var(--coral); }
+  .lux-desc {
+    font-size: 13px;
+    color: var(--gray-700);
+    line-height: 1.6;
+  }
+  .lux-delta {
+    margin-top: 32px;
+    padding: 24px;
+    background: var(--forest);
+    border-radius: 8px;
+    text-align: center;
+  }
+  .lux-delta-n {
+    font-family: var(--font-display);
+    font-size: 48px;
+    font-weight: 700;
+    color: var(--coral);
+  }
+  .lux-delta-l {
+    font-size: 13px;
+    color: #8CB89C;
+    margin-top: 4px;
+  }
+
+  /* ── METHODOLOGY ── */
+  .method-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .method-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 8px;
+    padding: 28px;
+  }
+  .method-card-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .method-badge {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 2px 8px;
+    background: rgba(217,84,58,0.2);
+    color: var(--coral-mid);
+    border-radius: 3px;
+    letter-spacing: 0.06em;
+  }
+  .method-desc {
+    font-size: 13px;
+    color: #6A9A7A;
+    line-height: 1.6;
+  }
+
+  /* ── EVI FORMULA ── */
+  .formula-box {
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    padding: 32px;
+    margin-top: 32px;
+    font-family: var(--font-mono);
+    font-size: 15px;
+    color: var(--black);
+    line-height: 2;
+  }
+  .formula-box span.coral { color: var(--coral); }
+  .formula-box span.forest { color: var(--forest); }
+  .formula-ref {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--gray-400);
+    font-family: var(--font-body);
+  }
+
+  /* ── DASHBOARD SECTION ── */
+  .dashboard-wrap {
+    margin-top: 40px;
+    border: 1px solid var(--gray-200);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .dashboard-header {
+    padding: 20px 28px;
+    background: var(--gray-100);
+    border-bottom: 1px solid var(--gray-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .dashboard-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--black);
+  }
+  .dashboard-sub {
+    font-size: 12px;
+    color: var(--gray-400);
+    margin-top: 2px;
+  }
+  .dashboard-tabs {
+    display: flex;
+    gap: 8px;
+  }
+  .d-tab {
+    font-size: 11px;
+    padding: 4px 12px;
+    border-radius: 3px;
+    border: 1px solid var(--gray-200);
+    color: var(--gray-400);
+    background: var(--white);
+  }
+  .d-tab.active {
+    background: var(--forest);
+    color: var(--forest-pale);
+    border-color: var(--forest);
+  }
+  .dashboard-embed {
+    width: 100%;
+    height: 600px;
+    border: none;
+    display: block;
+  }
+
+  /* ── TOOLS ── */
+  .tools-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 32px;
+  }
+  .tool-pill {
+    font-size: 13px;
+    padding: 6px 16px;
+    border-radius: 3px;
+    border: 1px solid var(--gray-200);
+    color: var(--gray-700);
+    background: var(--white);
+    font-family: var(--font-body);
+  }
+  .tool-pill.highlight {
+    background: var(--forest-pale);
+    border-color: #B0CEB8;
+    color: var(--forest);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--forest);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-left {
+    font-size: 13px;
+    color: #6A9A7A;
+  }
+  .footer-left strong {
+    color: var(--forest-pale);
+    font-weight: 500;
+  }
+  .footer-links {
+    display: flex;
+    gap: 24px;
+  }
+  .footer-links a {
+    font-size: 13px;
+    color: #8CB89C;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--forest-pale); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-tag    { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
+  .hero-title  { animation: fadeUp 0.5s ease both; animation-delay: 0.2s; }
+  .hero-sub    { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; }
+  .hero-btns   { animation: fadeUp 0.5s ease both; animation-delay: 0.4s; }
+  .hero-stat-card { animation: fadeUp 0.5s ease both; animation-delay: 0.35s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .hero { grid-template-columns: 1fr; padding: 48px 24px; gap: 40px; }
+    .hero-title { font-size: 36px; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .section { padding: 48px 24px; }
+    .findings-grid { grid-template-columns: 1fr; }
+    .pipeline { grid-template-columns: 1fr; }
+    .pipeline::before { display: none; }
+    .luxury-callout { grid-template-columns: 1fr; }
+    .method-grid { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 20px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Theofanis Kotsis · Data Science</div>
+  <div class="nav-links">
+    <a href="#findings">Findings</a>
+    <a href="#methodology">Methodology</a>
+    <a href="#dashboard">Dashboard</a>
+    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag">Case Study · Attica 2020–2024</div>
+    <h1 class="hero-title">
+      Does the climate crisis<br>
+      hit <em>everyone</em> equally?
+    </h1>
+    <p class="hero-sub">
+      Combining satellite imagery, census data and fire service records
+      to map environmental inequality across 66 Attica municipalities —
+      and prove the Luxury Effect exists in Athens.
+    </p>
+    <div class="hero-btns">
+      <a href="#dashboard" class="btn-primary">
+        <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
+        View Dashboard
+      </a>
+      <a href="https://github.com/YOUR_USERNAME/environmental-justice-athens" target="_blank" class="btn-secondary">
+        <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+  <div class="hero-stat-card">
+    <div class="hero-stat-main">+3.82°C</div>
+    <div class="hero-stat-label">Average temperature rise<br>across Attica · 2020 → 2024</div>
+    <div class="hero-stat-divider"></div>
+    <div class="hero-stat-row">
+      <div class="hero-stat-mini">
+        <div class="hero-stat-mini-n">66</div>
+        <div class="hero-stat-mini-l">Municipalities<br>analysed</div>
+      </div>
+      <div class="hero-stat-mini">
+        <div class="hero-stat-mini-n">2,514</div>
+        <div class="hero-stat-mini-l">Flood incidents<br>2020–2024</div>
+      </div>
+      <div class="hero-stat-mini">
+        <div class="hero-stat-mini-n">4</div>
+        <div class="hero-stat-mini-l">Data sources<br>merged</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat-cell">
+    <div class="stat-number">+0.53°C</div>
+    <div class="stat-label">Luxury Effect delta — deprived vs affluent municipalities</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-number">0.768</div>
+    <div class="stat-label">Highest EVI score — Athens municipality</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-number green">0.231</div>
+    <div class="stat-label">Lowest EVI score — Dionysos municipality</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-number green">5yr</div>
+    <div class="stat-label">Time series analysis · Landsat 8/9 · Summer composites</div>
+  </div>
+</div>
+
+<!-- FINDINGS -->
+<section class="section" id="findings">
+  <div class="section-eyebrow">Key findings</div>
+  <h2 class="section-title">What the data reveals</h2>
+  <p class="section-body">
+    Combining four independent data sources, the analysis confirms that climate vulnerability
+    in Athens is not random — it follows socioeconomic fault lines with statistical precision.
+  </p>
+  <div class="findings-grid">
+    <div class="finding-card">
+      <div class="finding-num" style="color: var(--coral)">+0.53°C</div>
+      <div class="finding-title">The Luxury Effect confirmed</div>
+      <div class="finding-desc">Municipalities with unemployment above the median are statistically hotter than affluent areas. High unemployment correlates with low NDVI and high LST across all five years.</div>
+    </div>
+    <div class="finding-card">
+      <div class="finding-num" style="color: var(--forest)">−54%</div>
+      <div class="finding-title">Vegetation gap</div>
+      <div class="finding-desc">NDVI ranges from 0.16 in Agia Varvara to 0.45 in Acharnon. Wealthier peripheral municipalities consistently show higher vegetation density and lower surface temperatures.</div>
+    </div>
+    <div class="finding-card">
+      <div class="finding-num" style="color: #B07A30">2023</div>
+      <div class="finding-title">Peak flood year</div>
+      <div class="finding-desc">691 water pumping operations in 2023 alone — a 55% increase over 2020. Athens municipality accounts for the largest share, exposing a disproportionate flood burden on dense urban cores.</div>
+    </div>
+  </div>
+</section>
+
+<!-- LUXURY EFFECT -->
+<section class="section section-alt">
+  <div class="section-eyebrow">The Luxury Effect</div>
+  <h2 class="section-title">Affluent areas stay cool.<br>Deprived areas overheat.</h2>
+  <p class="section-body">
+    Municipalities were split at the median unemployment rate (12.1%).
+    The temperature differential is consistent across all five years of the analysis.
+  </p>
+  <div class="luxury-callout">
+    <div class="lux-panel lux-panel-left">
+      <div class="lux-label green">Affluent municipalities</div>
+      <div class="lux-temp green">44.37°C</div>
+      <div class="lux-desc">Average Land Surface Temperature in municipalities with unemployment ≤ 12.1%. Higher tree coverage, more parks, lower building density.</div>
+    </div>
+    <div class="lux-panel lux-panel-right">
+      <div class="lux-label coral">Deprived municipalities</div>
+      <div class="lux-temp coral">44.90°C</div>
+      <div class="lux-desc">Average Land Surface Temperature in municipalities with unemployment > 12.1%. Dense impervious surfaces, minimal vegetation, intensified urban heat island effect.</div>
+    </div>
+  </div>
+  <div class="lux-delta">
+    <div class="lux-delta-n">+0.53°C</div>
+    <div class="lux-delta-l">Statistically consistent temperature gap · Cutter et al. (2003) methodology</div>
+  </div>
+</section>
+
+<!-- METHODOLOGY -->
+<section class="section section-forest" id="methodology">
+  <div class="section-eyebrow" style="color: var(--coral-mid)">Methodology</div>
+  <h2 class="section-title light">How it was built</h2>
+  <p class="section-body light">
+    A 6-script Python pipeline extracts, cleans, merges and scores data from
+    four independent sources into a single master dataset of 330 observations.
+  </p>
+
+  <div class="method-grid">
+    <div class="method-card">
+      <div class="method-card-title">
+        Satellite data extraction
+        <span class="method-badge">01_extract_satellite_data.py</span>
+      </div>
+      <div class="method-desc">Landsat 8/9 Collection 2 median composites per summer (Jun–Aug) 2020–2024. Zonal statistics per municipality using GADM Level 3 boundaries. LST, NDVI, NDBI extracted at 100m resolution via Google Earth Engine.</div>
+    </div>
+    <div class="method-card">
+      <div class="method-card-title">
+        Flood risk extraction
+        <span class="method-badge">02_extract_flood_data.py</span>
+      </div>
+      <div class="method-desc">Fire Service urban intervention records filtered for "ΑΝΤΛΗΣΗ ΝΕΡΟΥ" (water pumping) events across Attica 2020–2024. 2,514 flood-related incidents aggregated per municipality and year.</div>
+    </div>
+    <div class="method-card">
+      <div class="method-card-title">
+        Socioeconomic data
+        <span class="method-badge">03_extract_socioeconomic_data.py</span>
+      </div>
+      <div class="method-desc">ELSTAT Census 2021 — unemployment rate per municipality (Table B02). Used as proxy for socioeconomic vulnerability, normalized 0–1 for the composite index.</div>
+    </div>
+    <div class="method-card">
+      <div class="method-card-title">
+        Vulnerability Index
+        <span class="method-badge">05_vulnerability_index.py</span>
+      </div>
+      <div class="method-desc">Environmental Vulnerability Index computed as equal-weight composite: 25% LST + 25% (1−NDVI) + 25% flood risk + 25% unemployment. Methodology based on Cutter, Boruff & Shirley (2003).</div>
+    </div>
+  </div>
+
+  <div class="formula-box">
+    <span class="coral">EVI</span> =
+    <span class="forest">0.25</span> × LST<sub>norm</sub> +
+    <span class="forest">0.25</span> × (1 − NDVI<sub>norm</sub>) +
+    <span class="forest">0.25</span> × flood<sub>norm</sub> +
+    <span class="forest">0.25</span> × unemployment<sub>norm</sub>
+    <div class="formula-ref">Cutter, S.L., Boruff, B.J. & Shirley, W.L. (2003). Social Vulnerability to Environmental Hazards. <em>Social Science Quarterly</em>, 84(2), 242–261.</div>
+  </div>
+</section>
+
+<!-- DASHBOARD -->
+<section class="section" id="dashboard">
+  <div class="section-eyebrow">Interactive dashboard</div>
+  <h2 class="section-title">Explore the data</h2>
+  <p class="section-body">
+    Four-page PowerBI dashboard — EVI vulnerability map, Luxury Effect scatter,
+    flood risk analysis and what-if scenario modelling for urban planners.
+  </p>
+  <div class="dashboard-wrap">
+    <div class="dashboard-header">
+      <div>
+        <div class="dashboard-title">Environmental Vulnerability Dashboard — Attica 2020–2024</div>
+        <div class="dashboard-sub">Landsat 8/9 · Fire Service · ELSTAT 2021 · 66 municipalities</div>
+      </div>
+      <div class="dashboard-tabs">
+        <div class="d-tab active">Overview</div>
+        <div class="d-tab">EVI Map</div>
+        <div class="d-tab">Luxury Effect</div>
+        <div class="d-tab">Flood Risk</div>
+      </div>
+    </div>
+    <!-- REPLACE THE src BELOW WITH YOUR POWERBI PUBLISH TO WEB LINK -->
+    <iframe
+      class="dashboard-embed"
+      src="https://app.powerbi.com/view?r=YOUR_POWERBI_EMBED_LINK_HERE"
+      allowFullScreen="true">
+    </iframe>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="section section-alt">
+  <div class="section-eyebrow">Tools & technologies</div>
+  <h2 class="section-title">Built with</h2>
+  <div class="tools-grid">
+    <span class="tool-pill highlight">Python</span>
+    <span class="tool-pill highlight">Google Earth Engine</span>
+    <span class="tool-pill highlight">Landsat 8/9</span>
+    <span class="tool-pill highlight">geopandas</span>
+    <span class="tool-pill highlight">geemap</span>
+    <span class="tool-pill">pandas</span>
+    <span class="tool-pill">GADM boundaries</span>
+    <span class="tool-pill highlight">PowerBI</span>
+    <span class="tool-pill">DAX</span>
+    <span class="tool-pill">ELSTAT Census 2021</span>
+    <span class="tool-pill">Fire Service open data</span>
+    <span class="tool-pill">Cutter et al. (2003)</span>
+    <span class="tool-pill">GitHub Pages</span>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-left">
+    <strong>Theofanis Kotsis</strong> · Data Science · Athens, Greece · 2025
+  </div>
+  <div class="footer-links">
+    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn ↗</a>
+    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a>
+    <a href="mailto:YOUR_EMAIL">Contact ↗</a>
+  </div>
+</footer>
+
+</body>
+</html>

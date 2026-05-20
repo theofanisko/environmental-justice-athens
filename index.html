@@ -42,7 +42,7 @@ body {
   font-family: var(--font-body);
   background: var(--white);
   color: var(--black);
-  font-size: 17px;
+  font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -122,14 +122,17 @@ nav {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius);
-  padding: 36px;
+  padding: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.hsp-big { font-family: var(--font-display); font-size: 68px; font-weight: 700; color: var(--coral); line-height: 1; margin-bottom: 10px; }
-.hsp-label { font-size: 14px; color: var(--forest-muted); line-height: 1.5; margin-bottom: 28px; }
-.hsp-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 24px; }
-.hsp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-.hsp-mini-n { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--white); }
-.hsp-mini-l { font-size: 11px; color: var(--forest-dim); margin-top: 3px; line-height: 1.4; }
+.hsp-big { font-family: var(--font-display); font-size: 80px; font-weight: 700; color: var(--coral); line-height: 1; margin-bottom: 14px; }
+.hsp-label { font-size: 17px; color: var(--forest-muted); line-height: 1.6; margin-bottom: 36px; }
+.hsp-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 36px; }
+.hsp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.hsp-mini-n { font-family: var(--font-display); font-size: 36px; font-weight: 500; color: var(--white); }
+.hsp-mini-l { font-size: 14px; color: var(--forest-dim); margin-top: 6px; line-height: 1.5; }
 
 /* ── STATS BAR ── */
 .stats-bar {
@@ -642,6 +645,12 @@ footer {
       <div>
         <div class="dashboard-title">Environmental Vulnerability Dashboard — Attica 2020–2024</div>
         <div class="dashboard-sub">Landsat 8/9 · Fire Service · ELSTAT 2021 · 66 municipalities · Cutter et al. (2003)</div>
+      </div>
+      <div class="dashboard-tabs">
+        <div class="d-tab active">Overview</div>
+        <div class="d-tab">EVI Map</div>
+        <div class="d-tab">Luxury Effect</div>
+        <div class="d-tab">Flood Risk</div>
       </div>
     </div>
     <div class="dashboard-cta">

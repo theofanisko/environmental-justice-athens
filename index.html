@@ -66,8 +66,8 @@ nav {
   background: var(--forest);
   padding: 80px 56px 72px;
   display: grid;
-  grid-template-columns: 1fr 500px;
-  gap: 60px;
+  grid-template-columns: 1fr 580px;
+  gap: 64px;
   align-items: center;
 }
 .hero-eyebrow {
@@ -122,15 +122,15 @@ nav {
   background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: var(--radius);
-  padding: 32px;
+  padding: 28px 44px;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-.hsp-big { font-family: var(--font-display); font-size: 80px; font-weight: 700; color: var(--coral); line-height: 1; margin-bottom: 14px; }
-.hsp-label { font-size: 17px; color: var(--forest-muted); line-height: 1.6; margin-bottom: 36px; }
-.hsp-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 36px; }
-.hsp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.hsp-big { font-family: var(--font-display); font-size: 72px; font-weight: 700; color: var(--coral); line-height: 1; margin-bottom: 10px; }
+.hsp-label { font-size: 17px; color: var(--forest-muted); line-height: 1.6; margin-bottom: 20px; }
+.hsp-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 20px; }
+.hsp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .hsp-mini-n { font-family: var(--font-display); font-size: 36px; font-weight: 500; color: var(--white); }
 .hsp-mini-l { font-size: 14px; color: var(--forest-dim); margin-top: 6px; line-height: 1.5; }
 
@@ -640,50 +640,16 @@ footer {
     Four-page PowerBI dashboard — EVI vulnerability map, Luxury Effect analysis,
     flood risk trends and what-if scenario modelling for urban planners and policymakers.
   </p>
-  <div class="dashboard-wrap">
-    <div class="dashboard-header">
-      <div>
-        <div class="dashboard-title">Environmental Vulnerability Dashboard — Attica 2020–2024</div>
-        <div class="dashboard-sub">Landsat 8/9 · Fire Service · ELSTAT 2021 · 66 municipalities · Cutter et al. (2003)</div>
-      </div>
-      <div class="dashboard-tabs">
-        <div class="d-tab active">Overview</div>
-        <div class="d-tab">EVI Map</div>
-        <div class="d-tab">Luxury Effect</div>
-        <div class="d-tab">Flood Risk</div>
-      </div>
-    </div>
-    <div class="dashboard-cta">
-      <div class="dashboard-cta-left">
-        <div class="dashboard-cta-icon">
-          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="7" height="7" rx="1"/>
-            <rect x="14" y="3" width="7" height="7" rx="1"/>
-            <rect x="3" y="14" width="7" height="7" rx="1"/>
-            <rect x="14" y="14" width="7" height="7" rx="1"/>
-          </svg>
-        </div>
-        <div>
-          <div class="dashboard-cta-title">4-page interactive PowerBI dashboard</div>
-          <div class="dashboard-cta-desc">EVI vulnerability map · Luxury Effect scatter · Flood risk analysis · What-if scenario modelling for urban planners</div>
-          <div class="dashboard-cta-tags">
-            <span>Overview</span>
-            <span>EVI Map</span>
-            <span>Luxury Effect</span>
-            <span>Flood Risk</span>
-          </div>
-        </div>
-      </div>
-      <a href="https://drive.google.com/file/d/10n3RXCxQCZTlXc3X0cXzK1nAldnJPPa_/view?usp=sharing"
-         target="_blank" class="dashboard-cta-btn">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
-          <polyline points="15 3 21 3 21 9"/>
-          <line x1="10" y1="14" x2="21" y2="3"/>
-        </svg>
-        Open Dashboard
-      </a>
-    </div>
+  <div style="margin-top: 40px;">
+    <a href="https://drive.google.com/file/d/10n3RXCxQCZTlXc3X0cXzK1nAldnJPPa_/view?usp=sharing"
+       target="_blank" class="btn-primary">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+        <polyline points="15 3 21 3 21 9"/>
+        <line x1="10" y1="14" x2="21" y2="3"/>
+      </svg>
+      Open Dashboard
+    </a>
   </div>
 </section>
 

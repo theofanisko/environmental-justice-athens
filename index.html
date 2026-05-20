@@ -3,597 +3,391 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Luxury Effect — Environmental Justice Athens</title>
+<title>Environmental Justice Athens — Theofanis Kotsis</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,500;1,700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400&display=swap" rel="stylesheet">
 <style>
-  /* ── TOKENS ── */
-  :root {
-    --forest:   #1A3C2A;
-    --forest-light: #2A5C3A;
-    --forest-pale:  #E8F2EC;
-    --forest-mid:   #4A7A5A;
-    --coral:    #D9543A;
-    --coral-light:  #F5EDE9;
-    --coral-mid:    #E8A090;
-    --white:    #FFFFFF;
-    --off-white:#FAFAFA;
-    --gray-100: #F2F2F0;
-    --gray-200: #E0E0DC;
-    --gray-400: #A0A09A;
-    --gray-700: #404038;
-    --black:    #1A1A18;
-    --font-display: 'Playfair Display', Georgia, serif;
-    --font-body:    'DM Sans', sans-serif;
-    --font-mono:    'DM Mono', monospace;
-  }
 
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+/* ── TOKENS ── */
+:root {
+  --forest:        #1A3C2A;
+  --forest-light:  #2A5C3A;
+  --forest-mid:    #4A7A5A;
+  --forest-pale:   #E8F2EC;
+  --forest-muted:  #8CB89C;
+  --forest-dim:    #6A9A7A;
+  --coral:         #D9543A;
+  --coral-light:   #FDF5F3;
+  --coral-mid:     #E8A090;
+  --white:         #FFFFFF;
+  --off-white:     #F8FAF8;
+  --gray-50:       #F5F7F5;
+  --gray-100:      #ECEEED;
+  --gray-200:      #E0E4E1;
+  --gray-400:      #9AA09A;
+  --gray-600:      #5A625A;
+  --gray-800:      #282E28;
+  --black:         #1A1E1A;
+  --font-display:  'Playfair Display', Georgia, serif;
+  --font-body:     'DM Sans', sans-serif;
+  --font-mono:     'DM Mono', monospace;
+  --radius:        8px;
+  --radius-sm:     4px;
+}
 
-  html { scroll-behavior: smooth; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
 
-  body {
-    font-family: var(--font-body);
-    background: var(--white);
-    color: var(--black);
-    font-size: 16px;
-    line-height: 1.7;
-    -webkit-font-smoothing: antialiased;
-  }
+/* ── NAV ── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--forest);
+  height: 56px;
+  padding: 0 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid var(--forest-light);
+}
+.nav-logo { font-size: 14px; font-weight: 500; color: var(--forest-pale); letter-spacing: 0.02em; }
+.nav-links { display: flex; gap: 32px; }
+.nav-links a { font-size: 13px; color: var(--forest-muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--forest-pale); }
 
-  /* ── NAV ── */
-  nav {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    background: var(--forest);
-    padding: 0 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 56px;
-    border-bottom: 1px solid var(--forest-light);
-  }
-  .nav-logo {
-    font-family: var(--font-body);
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--forest-pale);
-    letter-spacing: 0.02em;
-  }
-  .nav-links {
-    display: flex;
-    gap: 32px;
-  }
-  .nav-links a {
-    font-size: 13px;
-    color: #8CB89C;
-    text-decoration: none;
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--forest-pale); }
+/* ── HERO ── */
+.hero {
+  background: var(--forest);
+  padding: 80px 56px 72px;
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--coral-mid);
+  margin-bottom: 20px;
+  display: flex; align-items: center; gap: 12px;
+}
+.hero-eyebrow::before {
+  content: ''; display: block;
+  width: 28px; height: 1px; background: var(--coral);
+}
+.hero-title {
+  font-family: var(--font-display);
+  font-size: 50px; font-weight: 700; line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 22px;
+  letter-spacing: -0.01em;
+}
+.hero-title em { color: var(--coral); font-style: italic; }
+.hero-sub {
+  font-size: 17px; color: var(--forest-muted);
+  line-height: 1.8; max-width: 520px;
+  margin-bottom: 36px;
+}
+.hero-btns { display: flex; gap: 12px; }
+.btn-primary {
+  font-size: 13px; font-weight: 500;
+  padding: 12px 24px;
+  background: var(--coral); color: var(--white);
+  border: none; border-radius: var(--radius-sm);
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-primary:hover { background: #C44430; transform: translateY(-1px); }
+.btn-secondary {
+  font-size: 13px; font-weight: 500;
+  padding: 12px 24px;
+  background: transparent; color: var(--forest-pale);
+  border: 1px solid var(--forest-mid);
+  border-radius: var(--radius-sm);
+  cursor: pointer; text-decoration: none;
+  display: inline-flex; align-items: center; gap: 8px;
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn-secondary:hover { border-color: var(--forest-muted); transform: translateY(-1px); }
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--forest);
-    padding: 80px 48px 64px;
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 64px;
-    align-items: end;
-  }
-  .hero-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 12px;
-    font-family: var(--font-mono);
-    color: var(--coral-mid);
-    margin-bottom: 20px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-  .hero-tag::before {
-    content: '';
-    display: block;
-    width: 24px;
-    height: 1px;
-    background: var(--coral);
-  }
-  .hero-title {
-    font-family: var(--font-display);
-    font-size: 52px;
-    font-weight: 700;
-    color: var(--white);
-    line-height: 1.15;
-    margin-bottom: 20px;
-    letter-spacing: -0.01em;
-  }
-  .hero-title em {
-    color: var(--coral);
-    font-style: italic;
-  }
-  .hero-sub {
-    font-size: 17px;
-    color: #8CB89C;
-    line-height: 1.7;
-    max-width: 540px;
-    margin-bottom: 32px;
-  }
-  .hero-btns {
-    display: flex;
-    gap: 12px;
-  }
-  .btn-primary {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 500;
-    padding: 12px 24px;
-    background: var(--coral);
-    color: var(--white);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: background 0.2s, transform 0.15s;
-  }
-  .btn-primary:hover { background: #C44430; transform: translateY(-1px); }
-  .btn-secondary {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 500;
-    padding: 12px 24px;
-    background: transparent;
-    color: var(--forest-pale);
-    border: 1px solid #4A7A5A;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: border-color 0.2s, transform 0.15s;
-  }
-  .btn-secondary:hover { border-color: #8CB89C; transform: translateY(-1px); }
+/* Hero stat panel */
+.hero-stat-panel {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 36px;
+}
+.hsp-big { font-family: var(--font-display); font-size: 68px; font-weight: 700; color: var(--coral); line-height: 1; margin-bottom: 10px; }
+.hsp-label { font-size: 14px; color: var(--forest-muted); line-height: 1.5; margin-bottom: 28px; }
+.hsp-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 24px; }
+.hsp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.hsp-mini-n { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--white); }
+.hsp-mini-l { font-size: 11px; color: var(--forest-dim); margin-top: 3px; line-height: 1.4; }
 
-  /* Hero stat card */
-  .hero-stat-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 32px;
-    align-self: center;
-  }
-  .hero-stat-main {
-    font-family: var(--font-display);
-    font-size: 72px;
-    font-weight: 700;
-    color: var(--coral);
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .hero-stat-label {
-    font-size: 14px;
-    color: #8CB89C;
-    line-height: 1.5;
-    margin-bottom: 24px;
-  }
-  .hero-stat-divider {
-    height: 1px;
-    background: rgba(255,255,255,0.1);
-    margin-bottom: 20px;
-  }
-  .hero-stat-row {
-    display: flex;
-    gap: 24px;
-  }
-  .hero-stat-mini { flex: 1; }
-  .hero-stat-mini-n {
-    font-family: var(--font-display);
-    font-size: 28px;
-    font-weight: 500;
-    color: var(--white);
-  }
-  .hero-stat-mini-l {
-    font-size: 11px;
-    color: #6A9A7A;
-    margin-top: 2px;
-  }
+/* ── STATS BAR ── */
+.stats-bar {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--gray-200);
+  background: var(--white);
+}
+.stat-cell {
+  padding: 32px 40px;
+  border-right: 1px solid var(--gray-200);
+}
+.stat-cell:last-child { border-right: none; }
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 34px; font-weight: 500;
+  color: var(--coral); line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-number.green { color: var(--forest); }
+.stat-label { font-size: 13px; color: var(--gray-400); line-height: 1.5; }
 
-  /* ── STATS BAR ── */
-  .stats-bar {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-bottom: 1px solid var(--gray-200);
-  }
-  .stat-cell {
-    padding: 28px 32px;
-    border-right: 1px solid var(--gray-200);
-  }
-  .stat-cell:last-child { border-right: none; }
-  .stat-number {
-    font-family: var(--font-display);
-    font-size: 32px;
-    font-weight: 500;
-    color: var(--coral);
-    line-height: 1;
-    margin-bottom: 6px;
-  }
-  .stat-number.green { color: var(--forest); }
-  .stat-label {
-    font-size: 13px;
-    color: var(--gray-400);
-    line-height: 1.4;
-  }
+/* ── SECTION WRAPPER ── */
+.section { padding: 80px 56px; border-bottom: 1px solid var(--gray-200); }
+.section-alt { padding: 80px 56px; background: var(--gray-50); border-bottom: 1px solid var(--gray-200); }
+.section-forest { padding: 80px 56px; background: var(--forest); border-bottom: 1px solid var(--forest-light); }
+.section-coral-light { padding: 80px 56px; background: var(--coral-light); border-bottom: 1px solid #F0DDD8; }
 
-  /* ── SECTIONS ── */
-  .section {
-    padding: 72px 48px;
-    border-bottom: 1px solid var(--gray-200);
-  }
-  .section:last-of-type { border-bottom: none; }
-  .section-alt { background: var(--off-white); }
-  .section-forest { background: var(--forest); }
-  .section-coral-light { background: var(--coral-light); }
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--coral); margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 500;
+  color: var(--black); line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-title.light { color: var(--white); }
+.section-sub {
+  font-size: 16px; color: var(--gray-600);
+  line-height: 1.85; max-width: 600px;
+  margin-bottom: 48px;
+}
+.section-sub.light { color: var(--forest-muted); }
 
-  .section-eyebrow {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--coral);
-    margin-bottom: 12px;
-  }
-  .section-title {
-    font-family: var(--font-display);
-    font-size: 36px;
-    font-weight: 500;
-    color: var(--black);
-    line-height: 1.25;
-    margin-bottom: 16px;
-  }
-  .section-title.light { color: var(--white); }
-  .section-body { /*body*/
-    font-size: 15px;
-    color: var(--gray-700);
-    line-height: 1.8;
-    max-width: 640px;
-  }
-  .section-body.light { color: #8CB89C; }
+/* ── FINDING CARDS ── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.card {
+  border-radius: var(--radius);
+  border: 1px solid var(--gray-200);
+  overflow: hidden;
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+.card:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.07); transform: translateY(-2px); }
+.card-top { padding: 28px 28px 24px; background: var(--white); }
+.card-bottom { padding: 14px 28px; background: var(--gray-50); border-top: 1px solid var(--gray-200); }
+.card-num {
+  font-family: var(--font-display);
+  font-size: 38px; font-weight: 700;
+  line-height: 1; margin-bottom: 12px;
+}
+.card-title { font-size: 15px; font-weight: 500; color: var(--black); margin-bottom: 8px; }
+.card-desc { font-size: 14px; color: var(--gray-400); line-height: 1.7; }
+.card-tag {
+  font-family: var(--font-mono);
+  font-size: 10px; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--forest-mid);
+}
 
-  /* ── FINDINGS GRID ── */
-  .findings-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1px;
-    background: var(--gray-200);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 40px;
-  }
-  .finding-card {
-    background: var(--white);
-    padding: 32px;
-  }
-  .finding-num {
-    font-family: var(--font-display);
-    font-size: 40px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 10px;
-  }
-  .finding-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--black);
-    margin-bottom: 8px;
-  }
-  .finding-desc {
-    font-size: 14px;
-    color: var(--gray-400);
-    line-height: 1.6;
-  }
+/* ── LUXURY EFFECT ── */
+.luxury-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 16px; margin-bottom: 16px;
+}
+.lux-card {
+  border-radius: var(--radius);
+  padding: 36px;
+}
+.lux-card.green { background: var(--forest-pale); border: 1px solid #C0D8C8; }
+.lux-card.coral { background: var(--coral-light); border: 1px solid #E8C0B0; }
+.lux-label {
+  font-family: var(--font-mono);
+  font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.lux-label.green { color: var(--forest-mid); }
+.lux-label.coral { color: var(--coral); }
+.lux-temp {
+  font-family: var(--font-display);
+  font-size: 60px; font-weight: 700;
+  line-height: 1; margin-bottom: 12px;
+}
+.lux-temp.green { color: var(--forest); }
+.lux-temp.coral { color: var(--coral); }
+.lux-desc { font-size: 14px; color: var(--gray-600); line-height: 1.75; }
+.lux-delta {
+  background: var(--forest);
+  border-radius: var(--radius);
+  padding: 32px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.lux-delta-n {
+  font-family: var(--font-display);
+  font-size: 52px; font-weight: 700; color: var(--coral);
+}
+.lux-delta-text { font-size: 15px; color: var(--forest-muted); max-width: 360px; line-height: 1.7; }
 
-  /* ── PIPELINE ── */
-  .pipeline {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    margin-top: 40px;
-    position: relative;
-  }
-  .pipeline::before {
-    content: '';
-    position: absolute;
-    top: 32px;
-    left: 10%;
-    right: 10%;
-    height: 1px;
-    background: var(--gray-200);
-    z-index: 0;
-  }
-  .pipe-step {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 0 16px;
-    position: relative;
-    z-index: 1;
-  }
-  .pipe-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background: var(--white);
-    border: 1px solid var(--gray-200);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 24px;
-    margin-bottom: 16px;
-  }
-  .pipe-icon.active {
-    background: var(--forest);
-    border-color: var(--forest);
-  }
-  .pipe-title {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--black);
-    margin-bottom: 4px;
-  }
-  .pipe-sub {
-    font-size: 11px;
-    color: var(--gray-400);
-    line-height: 1.4;
-  }
+/* ── PIPELINE CARDS ── */
+.pipe-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.pipe-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: background 0.2s;
+}
+.pipe-card:hover { background: rgba(255,255,255,0.09); }
+.pipe-step {
+  font-family: var(--font-mono);
+  font-size: 11px; color: var(--coral-mid);
+  letter-spacing: 0.08em; margin-bottom: 10px;
+}
+.pipe-title { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 8px; }
+.pipe-desc { font-size: 14px; color: var(--forest-dim); line-height: 1.7; }
 
-  /* ── LUXURY EFFECT CALLOUT ── */
-  .luxury-callout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    border-radius: 8px;
-    overflow: hidden;
-    margin-top: 40px;
-    border: 1px solid var(--gray-200);
-  }
-  .lux-panel {
-    padding: 40px;
-  }
-  .lux-panel-left { background: var(--forest-pale); }
-  .lux-panel-right { background: var(--coral-light); }
-  .lux-label {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 12px;
-  }
-  .lux-label.green { color: var(--forest-mid); }
-  .lux-label.coral { color: var(--coral); }
-  .lux-temp {
-    font-family: var(--font-display);
-    font-size: 56px;
-    font-weight: 700;
-    line-height: 1;
-    margin-bottom: 8px;
-  }
-  .lux-temp.green { color: var(--forest); }
-  .lux-temp.coral { color: var(--coral); }
-  .lux-desc {
-    font-size: 14px;
-    color: var(--gray-700);
-    line-height: 1.6;
-  }
-  .lux-delta {
-    margin-top: 32px;
-    padding: 24px;
-    background: var(--forest);
-    border-radius: 8px;
-    text-align: center;
-  }
-  .lux-delta-n {
-    font-family: var(--font-display);
-    font-size: 48px;
-    font-weight: 700;
-    color: var(--coral);
-  }
-  .lux-delta-l {
-    font-size: 13px;
-    color: #8CB89C;
-    margin-top: 4px;
-  }
+/* ── FORMULA ── */
+.formula-box {
+  background: var(--gray-50);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 36px 40px;
+  margin-top: 40px;
+  font-family: var(--font-mono);
+  font-size: 16px; color: var(--black);
+  line-height: 2.2;
+}
+.formula-box .coral { color: var(--coral); font-weight: 500; }
+.formula-box .forest { color: var(--forest); font-weight: 500; }
+.formula-ref {
+  margin-top: 20px;
+  font-family: var(--font-body);
+  font-size: 13px; color: var(--gray-400);
+  font-style: italic;
+  padding-top: 20px;
+  border-top: 1px solid var(--gray-200);
+}
 
-  /* ── METHODOLOGY ── */
-  .method-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-    margin-top: 40px;
-  }
-  .method-card {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 8px;
-    padding: 28px;
-  }
-  .method-card-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--white);
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .method-badge {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    padding: 2px 8px;
-    background: rgba(217,84,58,0.2);
-    color: var(--coral-mid);
-    border-radius: 3px;
-    letter-spacing: 0.06em;
-  }
-  .method-desc {
-    font-size: 14px;
-    color: #6A9A7A;
-    line-height: 1.6;
-  }
+/* ── DASHBOARD ── */
+.dashboard-wrap {
+  margin-top: 48px;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.dashboard-header {
+  padding: 20px 28px;
+  background: var(--gray-50);
+  border-bottom: 1px solid var(--gray-200);
+  display: flex; align-items: center; justify-content: space-between;
+}
+.dashboard-title { font-size: 14px; font-weight: 500; color: var(--black); }
+.dashboard-sub { font-size: 13px; color: var(--gray-400); margin-top: 3px; }
+.dashboard-tabs { display: flex; gap: 8px; }
+.d-tab {
+  font-size: 12px; padding: 5px 14px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-200);
+  color: var(--gray-400); background: var(--white);
+}
+.d-tab.active { background: var(--forest); color: var(--forest-pale); border-color: var(--forest); }
+.dashboard-embed { width: 100%; height: 620px; border: none; display: block; }
+.dashboard-cta {
+  padding: 56px 40px;
+  display: flex; align-items: center; justify-content: space-between; gap: 40px;
+  background: var(--white);
+}
+.dashboard-cta-left { display: flex; align-items: flex-start; gap: 24px; flex: 1; }
+.dashboard-cta-icon {
+  width: 64px; height: 64px; flex-shrink: 0;
+  background: var(--forest-pale); border-radius: var(--radius);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--forest);
+}
+.dashboard-cta-title { font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 6px; }
+.dashboard-cta-desc { font-size: 14px; color: var(--gray-400); line-height: 1.6; margin-bottom: 14px; }
+.dashboard-cta-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.dashboard-cta-tags span {
+  font-size: 12px; padding: 4px 12px;
+  border-radius: 24px; border: 1px solid var(--gray-200);
+  color: var(--gray-600); background: var(--gray-50);
+}
+.dashboard-cta-btn {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px;
+  background: var(--forest); color: var(--forest-pale);
+  font-size: 14px; font-weight: 500;
+  text-decoration: none; border-radius: var(--radius-sm);
+  transition: background 0.2s, transform 0.15s;
+  white-space: nowrap;
+}
+.dashboard-cta-btn:hover { background: var(--forest-light); transform: translateY(-1px); }
 
-  /* ── EVI FORMULA ── */
-  .formula-box {
-    background: var(--gray-100);
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    padding: 32px;
-    margin-top: 32px;
-    font-family: var(--font-mono);
-    font-size: 16px;
-    color: var(--black);
-    line-height: 2;
-  }
-  .formula-box span.coral { color: var(--coral); }
-  .formula-box span.forest { color: var(--forest); }
-  .formula-ref {
-    margin-top: 16px;
-    font-size: 12px;
-    color: var(--gray-400);
-    font-family: var(--font-body);
-  }
+/* ── TOOLS ── */
+.tools-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
+.tool-pill {
+  font-size: 13px; padding: 7px 18px;
+  border-radius: 24px;
+  border: 1px solid var(--gray-200);
+  color: var(--gray-600); background: var(--white);
+  transition: border-color 0.2s, color 0.2s;
+}
+.tool-pill:hover { border-color: var(--forest-mid); color: var(--forest); }
+.tool-pill.hl { background: var(--forest-pale); border-color: #B0CEB8; color: var(--forest); }
 
-  /* ── DASHBOARD SECTION ── */
-  .dashboard-wrap {
-    margin-top: 40px;
-    border: 1px solid var(--gray-200);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  .dashboard-header {
-    padding: 20px 28px;
-    background: var(--gray-100);
-    border-bottom: 1px solid var(--gray-200);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .dashboard-title {
-    font-size: 14px;
-    font-weight: 500;
-    color: var(--black);
-  }
-  .dashboard-sub {
-    font-size: 12px;
-    color: var(--gray-400);
-    margin-top: 2px;
-  }
-  .dashboard-tabs {
-    display: flex;
-    gap: 8px;
-  }
-  .d-tab {
-    font-size: 11px;
-    padding: 4px 12px;
-    border-radius: 3px;
-    border: 1px solid var(--gray-200);
-    color: var(--gray-400);
-    background: var(--white);
-  }
-  .d-tab.active {
-    background: var(--forest);
-    color: var(--forest-pale);
-    border-color: var(--forest);
-  }
-  .dashboard-embed {
-    width: 100%;
-    height: 600px;
-    border: none;
-    display: block;
-  }
+/* ── FOOTER ── */
+footer {
+  background: var(--forest);
+  padding: 44px 56px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-left { font-size: 13px; color: var(--forest-dim); }
+.footer-left strong { color: var(--forest-pale); font-weight: 500; }
+.footer-links { display: flex; gap: 28px; }
+.footer-links a { font-size: 13px; color: var(--forest-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--forest-pale); }
 
-  /* ── TOOLS ── */
-  .tools-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 32px;
-  }
-  .tool-pill {
-    font-size: 13px;
-    padding: 6px 16px;
-    border-radius: 3px;
-    border: 1px solid var(--gray-200);
-    color: var(--gray-700);
-    background: var(--white);
-    font-family: var(--font-body);
-  }
-  .tool-pill.highlight {
-    background: var(--forest-pale);
-    border-color: #B0CEB8;
-    color: var(--forest);
-  }
+/* ── ANIMATIONS ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-eyebrow  { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; opacity: 0; }
+.hero-title    { animation: fadeUp 0.5s ease both; animation-delay: 0.2s; opacity: 0; }
+.hero-sub      { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; opacity: 0; }
+.hero-btns     { animation: fadeUp 0.5s ease both; animation-delay: 0.4s; opacity: 0; }
+.hero-stat-panel { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; opacity: 0; }
 
-  /* ── FOOTER ── */
-  footer {
-    background: var(--forest);
-    padding: 40px 48px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .footer-left {
-    font-size: 13px;
-    color: #6A9A7A;
-  }
-  .footer-left strong {
-    color: var(--forest-pale);
-    font-weight: 500;
-  }
-  .footer-links {
-    display: flex;
-    gap: 24px;
-  }
-  .footer-links a {
-    font-size: 13px;
-    color: #8CB89C;
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .footer-links a:hover { color: var(--forest-pale); }
-
-  /* ── ANIMATIONS ── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(20px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .hero-tag    { animation: fadeUp 0.5s ease both; animation-delay: 0.1s; }
-  .hero-title  { animation: fadeUp 0.5s ease both; animation-delay: 0.2s; }
-  .hero-sub    { animation: fadeUp 0.5s ease both; animation-delay: 0.3s; }
-  .hero-btns   { animation: fadeUp 0.5s ease both; animation-delay: 0.4s; }
-  .hero-stat-card { animation: fadeUp 0.5s ease both; animation-delay: 0.35s; }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 0 24px; }
-    .hero { grid-template-columns: 1fr; padding: 48px 24px; gap: 40px; }
-    .hero-title { font-size: 36px; }
-    .stats-bar { grid-template-columns: repeat(2, 1fr); }
-    .section { padding: 48px 24px; }
-    .findings-grid { grid-template-columns: 1fr; }
-    .pipeline { grid-template-columns: 1fr; }
-    .pipeline::before { display: none; }
-    .luxury-callout { grid-template-columns: 1fr; }
-    .method-grid { grid-template-columns: 1fr; }
-    footer { flex-direction: column; gap: 20px; text-align: center; }
-  }
+/* ── RESPONSIVE ── */
+@media (max-width: 960px) {
+  nav { padding: 0 24px; }
+  .hero { grid-template-columns: 1fr; padding: 48px 24px; gap: 40px; }
+  .hero-title { font-size: 36px; }
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+  .section, .section-alt, .section-forest, .section-coral-light { padding: 56px 24px; }
+  .cards-grid, .pipe-grid { grid-template-columns: 1fr; }
+  .luxury-grid { grid-template-columns: 1fr; }
+  .lux-delta { flex-direction: column; gap: 16px; }
+  footer { flex-direction: column; gap: 20px; text-align: center; padding: 36px 24px; }
+}
 </style>
 </head>
 <body>
@@ -603,16 +397,17 @@
   <div class="nav-logo">Theofanis Kotsis · Data Science</div>
   <div class="nav-links">
     <a href="#findings">Findings</a>
+    <a href="#luxury">Luxury Effect</a>
     <a href="#methodology">Methodology</a>
     <a href="#dashboard">Dashboard</a>
-    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a>
+    <a href="https://github.com/theofanisko" target="_blank">GitHub ↗</a>
   </div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
   <div>
-    <div class="hero-tag">Case Study · Attica 2020–2024</div>
+    <div class="hero-eyebrow">Case Study · Attica 2020–2024</div>
     <h1 class="hero-title">
       Does the climate crisis<br>
       hit <em>everyone</em> equally?
@@ -627,28 +422,32 @@
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/></svg>
         View Dashboard
       </a>
-      <a href="https://github.com/YOUR_USERNAME/environmental-justice-athens" target="_blank" class="btn-secondary">
+      <a href="https://github.com/theofanisko/environmental-justice-athens" target="_blank" class="btn-secondary">
         <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub
       </a>
     </div>
   </div>
-  <div class="hero-stat-card">
-    <div class="hero-stat-main">+3.82°C</div>
-    <div class="hero-stat-label">Average temperature rise<br>across Attica · 2020 → 2024</div>
-    <div class="hero-stat-divider"></div>
-    <div class="hero-stat-row">
-      <div class="hero-stat-mini">
-        <div class="hero-stat-mini-n">66</div>
-        <div class="hero-stat-mini-l">Municipalities<br>analysed</div>
+  <div class="hero-stat-panel">
+    <div class="hsp-big">+3.82°C</div>
+    <div class="hsp-label">Average temperature rise<br>across Attica · 2020 → 2024</div>
+    <div class="hsp-divider"></div>
+    <div class="hsp-grid">
+      <div>
+        <div class="hsp-mini-n">66</div>
+        <div class="hsp-mini-l">Municipalities<br>analysed</div>
       </div>
-      <div class="hero-stat-mini">
-        <div class="hero-stat-mini-n">2,514</div>
-        <div class="hero-stat-mini-l">Flood incidents<br>2020–2024</div>
+      <div>
+        <div class="hsp-mini-n">2,514</div>
+        <div class="hsp-mini-l">Flood incidents<br>2020–2024</div>
       </div>
-      <div class="hero-stat-mini">
-        <div class="hero-stat-mini-n">4</div>
-        <div class="hero-stat-mini-l">Data sources<br>merged</div>
+      <div>
+        <div class="hsp-mini-n">5yr</div>
+        <div class="hsp-mini-l">Time series<br>analysis</div>
+      </div>
+      <div>
+        <div class="hsp-mini-n">4</div>
+        <div class="hsp-mini-l">Data sources<br>merged</div>
       </div>
     </div>
   </div>
@@ -662,15 +461,15 @@
   </div>
   <div class="stat-cell">
     <div class="stat-number">0.768</div>
-    <div class="stat-label">Highest EVI score — Athens municipality</div>
+    <div class="stat-label">Highest EVI score — Athens municipality (2024)</div>
   </div>
   <div class="stat-cell">
     <div class="stat-number green">0.231</div>
-    <div class="stat-label">Lowest EVI score — Dionysos municipality</div>
+    <div class="stat-label">Lowest EVI score — Dionysos municipality (2024)</div>
   </div>
   <div class="stat-cell">
-    <div class="stat-number green">5yr</div>
-    <div class="stat-label">Time series analysis · Landsat 8/9 · Summer composites</div>
+    <div class="stat-number green">12.1%</div>
+    <div class="stat-label">Median unemployment — threshold for Luxury Effect split</div>
   </div>
 </div>
 
@@ -678,102 +477,155 @@
 <section class="section" id="findings">
   <div class="section-eyebrow">Key findings</div>
   <h2 class="section-title">What the data reveals</h2>
-  <p class="section-body">
-    Combining four independent data sources, the analysis confirms that climate vulnerability
-    in Athens is not random — it follows socioeconomic fault lines with statistical precision.
+  <p class="section-sub">
+    Four independent data sources, one clear pattern: climate vulnerability
+    in Athens follows socioeconomic fault lines with statistical precision.
   </p>
-  <div class="findings-grid">
-    <div class="finding-card">
-      <div class="finding-num" style="color: var(--coral)">+0.53°C</div>
-      <div class="finding-title">The Luxury Effect confirmed</div>
-      <div class="finding-desc">Municipalities with unemployment above the median are statistically hotter than affluent areas. High unemployment correlates with low NDVI and high LST across all five years.</div>
+  <div class="cards-grid">
+    <div class="card">
+      <div class="card-top">
+        <div class="card-num" style="color: var(--coral)">+0.53°C</div>
+        <div class="card-title">The Luxury Effect confirmed</div>
+        <div class="card-desc">Municipalities with above-median unemployment are statistically hotter than affluent areas. The pattern holds consistently across all five years of analysis.</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-tag">Temperature · LST · Cutter et al. (2003)</div>
+      </div>
     </div>
-    <div class="finding-card">
-      <div class="finding-num" style="color: var(--forest)">−54%</div>
-      <div class="finding-title">Vegetation gap</div>
-      <div class="finding-desc">NDVI ranges from 0.16 in Agia Varvara to 0.45 in Acharnon. Wealthier peripheral municipalities consistently show higher vegetation density and lower surface temperatures.</div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-num" style="color: var(--forest)">−54%</div>
+        <div class="card-title">Vegetation gap</div>
+        <div class="card-desc">NDVI ranges from 0.16 in Agia Varvara to 0.45 in Acharnon — a 54% gap. Wealthier peripheral municipalities consistently show higher vegetation density and lower surface temperatures.</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-tag">Greenery · NDVI · Landsat 8/9</div>
+      </div>
     </div>
-    <div class="finding-card">
-      <div class="finding-num" style="color: #B07A30">2023</div>
-      <div class="finding-title">Peak flood year</div>
-      <div class="finding-desc">691 water pumping operations in 2023 alone — a 55% increase over 2020. Athens municipality accounts for the largest share, exposing a disproportionate flood burden on dense urban cores.</div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-num" style="color: #B07A30">2023</div>
+        <div class="card-title">Peak flood year</div>
+        <div class="card-desc">691 water pumping operations in 2023 alone — a 55% increase over 2020. Athens municipality accounts for the largest share, exposing a disproportionate flood burden on dense urban cores.</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-tag">Flood risk · Fire Service · ΠΥ records</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-num" style="color: var(--coral)">44.5°C</div>
+        <div class="card-title">Peak summer LST 2024</div>
+        <div class="card-desc">Average land surface temperature across Attica in summer 2024 — up from 40.7°C in 2020. Urban heat island intensifying at a rate of +0.96°C per year on average.</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-tag">Land Surface Temperature · 5-year trend</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-num" style="color: var(--forest)">0.261</div>
+        <div class="card-title">Mean NDVI — Attica</div>
+        <div class="card-desc">Average vegetation index across all 66 municipalities in 2024. The gradient from dense urban cores (0.16–0.20) to green periphery (0.40–0.45) mirrors the socioeconomic map of Attica.</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-tag">Vegetation Index · 66 municipalities</div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-top">
+        <div class="card-num" style="color: var(--gray-600)">330</div>
+        <div class="card-title">Data points in master dataset</div>
+        <div class="card-desc">66 municipalities × 5 years, with LST, NDVI, NDBI, flood incidents and unemployment rate — all merged into a single analysis-ready dataset via a 6-script Python pipeline.</div>
+      </div>
+      <div class="card-bottom">
+        <div class="card-tag">Python pipeline · 4 data sources</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- LUXURY EFFECT -->
-<section class="section section-alt">
+<section class="section-alt" id="luxury">
   <div class="section-eyebrow">The Luxury Effect</div>
   <h2 class="section-title">Affluent areas stay cool.<br>Deprived areas overheat.</h2>
-  <p class="section-body">
+  <p class="section-sub">
     Municipalities were split at the median unemployment rate (12.1%).
-    The temperature differential is consistent across all five years of the analysis.
+    The temperature differential is statistically consistent across all five years.
   </p>
-  <div class="luxury-callout">
-    <div class="lux-panel lux-panel-left">
-      <div class="lux-label green">Affluent municipalities</div>
+  <div class="luxury-grid">
+    <div class="lux-card green">
+      <div class="lux-label green">Affluent municipalities · unemployment ≤ 12.1%</div>
       <div class="lux-temp green">44.37°C</div>
-      <div class="lux-desc">Average Land Surface Temperature in municipalities with unemployment ≤ 12.1%. Higher tree coverage, more parks, lower building density.</div>
+      <div class="lux-desc">Higher tree coverage, more parks, lower building density. The combination of vegetation and reduced impervious surfaces creates a measurable cooling effect — confirmed by five consecutive summers of Landsat imagery.</div>
     </div>
-    <div class="lux-panel lux-panel-right">
-      <div class="lux-label coral">Deprived municipalities</div>
+    <div class="lux-card coral">
+      <div class="lux-label coral">Deprived municipalities · unemployment > 12.1%</div>
       <div class="lux-temp coral">44.90°C</div>
-      <div class="lux-desc">Average Land Surface Temperature in municipalities with unemployment > 12.1%. Dense impervious surfaces, minimal vegetation, intensified urban heat island effect.</div>
+      <div class="lux-desc">Dense impervious surfaces, minimal vegetation, intensified urban heat island effect. Residents in these areas face compounded vulnerability: higher temperatures, fewer green spaces, and greater flood exposure.</div>
     </div>
   </div>
   <div class="lux-delta">
     <div class="lux-delta-n">+0.53°C</div>
-    <div class="lux-delta-l">Statistically consistent temperature gap · Cutter et al. (2003) methodology</div>
+    <div class="lux-delta-text">
+      Statistically consistent temperature gap between deprived and affluent municipalities —
+      confirmed by satellite data across five consecutive summers (2020–2024).
+      Methodology: Cutter, Boruff & Shirley (2003).
+    </div>
   </div>
 </section>
 
 <!-- METHODOLOGY -->
-<section class="section section-forest" id="methodology">
-  <div class="section-eyebrow" style="color: var(--coral-mid)">Methodology</div>
+<section class="section-forest" id="methodology">
+  <div class="section-eyebrow">Methodology</div>
   <h2 class="section-title light">How it was built</h2>
-  <p class="section-body light">
-    A 6-script Python pipeline extracts, cleans, merges and scores data from
-    four independent sources into a single master dataset of 330 observations.
+  <p class="section-sub light">
+    A 6-script Python pipeline extracts, cleans, merges and scores data
+    from four independent sources into a single master dataset of 330 observations.
   </p>
-
-  <div class="method-grid">
-    <div class="method-card">
-      <div class="method-card-title">
-        Satellite data extraction
-        <span class="method-badge">01_extract_satellite_data.py</span>
-      </div>
-      <div class="method-desc">Landsat 8/9 Collection 2 median composites per summer (Jun–Aug) 2020–2024. Zonal statistics per municipality using GADM Level 3 boundaries. LST, NDVI, NDBI extracted at 100m resolution via Google Earth Engine.</div>
+  <div class="pipe-grid">
+    <div class="pipe-card">
+      <div class="pipe-step">01 · 01_extract_satellite_data.py</div>
+      <div class="pipe-title">Satellite extraction</div>
+      <div class="pipe-desc">Landsat 8/9 Collection 2 median composites per summer (Jun–Aug) 2020–2024. Zonal statistics per municipality using GADM Level 3 boundaries. LST, NDVI, NDBI extracted at 100m resolution via Google Earth Engine.</div>
     </div>
-    <div class="method-card">
-      <div class="method-card-title">
-        Flood risk extraction
-        <span class="method-badge">02_extract_flood_data.py</span>
-      </div>
-      <div class="method-desc">Fire Service urban intervention records filtered for "ΑΝΤΛΗΣΗ ΝΕΡΟΥ" (water pumping) events across Attica 2020–2024. 2,514 flood-related incidents aggregated per municipality and year.</div>
+    <div class="pipe-card">
+      <div class="pipe-step">02 · 02_extract_flood_data.py</div>
+      <div class="pipe-title">Flood risk extraction</div>
+      <div class="pipe-desc">Fire Service urban intervention records filtered for "ΑΝΤΛΗΣΗ ΝΕΡΟΥ" (water pumping) events across Attica 2020–2024. 2,514 flood-related incidents aggregated per municipality and year.</div>
     </div>
-    <div class="method-card">
-      <div class="method-card-title">
-        Socioeconomic data
-        <span class="method-badge">03_extract_socioeconomic_data.py</span>
-      </div>
-      <div class="method-desc">ELSTAT Census 2021 — unemployment rate per municipality (Table B02). Used as proxy for socioeconomic vulnerability, normalized 0–1 for the composite index.</div>
+    <div class="pipe-card">
+      <div class="pipe-step">03 · 03_extract_socioeconomic_data.py</div>
+      <div class="pipe-title">Socioeconomic data</div>
+      <div class="pipe-desc">ELSTAT Census 2021 — unemployment rate per municipality (Table B02). Used as proxy for socioeconomic vulnerability, normalized 0–1 for the composite index.</div>
     </div>
-    <div class="method-card">
-      <div class="method-card-title">
-        Vulnerability Index
-        <span class="method-badge">05_vulnerability_index.py</span>
-      </div>
-      <div class="method-desc">Environmental Vulnerability Index computed as equal-weight composite: 25% LST + 25% (1−NDVI) + 25% flood risk + 25% unemployment. Methodology based on Cutter, Boruff & Shirley (2003).</div>
+    <div class="pipe-card">
+      <div class="pipe-step">04 · 04_merge_master_dataset.py</div>
+      <div class="pipe-title">Master dataset merge</div>
+      <div class="pipe-desc">All sources merged on normalized municipality key. 92% Landsat match rate across 66 municipalities. Remaining 8% are islands outside the GADM bounding box — expected and documented.</div>
+    </div>
+    <div class="pipe-card">
+      <div class="pipe-step">05 · 05_vulnerability_index.py</div>
+      <div class="pipe-title">Vulnerability Index (EVI)</div>
+      <div class="pipe-desc">Environmental Vulnerability Index computed as equal-weight composite. Each component normalized 0–1. EVI categorized into five levels from Very Low to Very High. Methodology based on Cutter et al. (2003).</div>
+    </div>
+    <div class="pipe-card">
+      <div class="pipe-step">06 · 06_prepare_powerbi_data.py</div>
+      <div class="pipe-title">PowerBI preparation</div>
+      <div class="pipe-desc">Final cleaning and formatting for PowerBI import. Greek municipality names added for labelling. Three output files: time series, 2024 snapshot, and master dataset.</div>
     </div>
   </div>
-
   <div class="formula-box">
-    <span class="coral">EVI</span> =
-    <span class="forest">0.25</span> × LST<sub>norm</sub> +
-    <span class="forest">0.25</span> × (1 − NDVI<sub>norm</sub>) +
-    <span class="forest">0.25</span> × flood<sub>norm</sub> +
-    <span class="forest">0.25</span> × unemployment<sub>norm</sub>
-    <div class="formula-ref">Cutter, S.L., Boruff, B.J. & Shirley, W.L. (2003). Social Vulnerability to Environmental Hazards. <em>Social Science Quarterly</em>, 84(2), 242–261.</div>
+    <span class="coral">EVI</span> &nbsp;=&nbsp;
+    <span class="forest">0.25</span> × LST<sub>norm</sub>
+    &nbsp;+&nbsp; <span class="forest">0.25</span> × (1 − NDVI<sub>norm</sub>)
+    &nbsp;+&nbsp; <span class="forest">0.25</span> × flood<sub>norm</sub>
+    &nbsp;+&nbsp; <span class="forest">0.25</span> × unemployment<sub>norm</sub>
+    <div class="formula-ref">
+      Cutter, S.L., Boruff, B.J. & Shirley, W.L. (2003).
+      Social Vulnerability to Environmental Hazards.
+      <em>Social Science Quarterly</em>, 84(2), 242–261.
+    </div>
   </div>
 </section>
 
@@ -781,15 +633,15 @@
 <section class="section" id="dashboard">
   <div class="section-eyebrow">Interactive dashboard</div>
   <h2 class="section-title">Explore the data</h2>
-  <p class="section-body">
-    Four-page PowerBI dashboard — EVI vulnerability map, Luxury Effect scatter,
-    flood risk analysis and what-if scenario modelling for urban planners.
+  <p class="section-sub">
+    Four-page PowerBI dashboard — EVI vulnerability map, Luxury Effect analysis,
+    flood risk trends and what-if scenario modelling for urban planners and policymakers.
   </p>
   <div class="dashboard-wrap">
     <div class="dashboard-header">
       <div>
         <div class="dashboard-title">Environmental Vulnerability Dashboard — Attica 2020–2024</div>
-        <div class="dashboard-sub">Landsat 8/9 · Fire Service · ELSTAT 2021 · 66 municipalities</div>
+        <div class="dashboard-sub">Landsat 8/9 · Fire Service · ELSTAT 2021 · 66 municipalities · Cutter et al. (2003)</div>
       </div>
       <div class="dashboard-tabs">
         <div class="d-tab active">Overview</div>
@@ -798,28 +650,56 @@
         <div class="d-tab">Flood Risk</div>
       </div>
     </div>
-    <!-- REPLACE THE src BELOW WITH YOUR POWERBI PUBLISH TO WEB LINK -->
-    <iframe
-      class="dashboard-embed"
-      src="https://app.powerbi.com/view?r=YOUR_POWERBI_EMBED_LINK_HERE"
-      allowFullScreen="true">
-    </iframe>
+    <div class="dashboard-cta">
+      <div class="dashboard-cta-left">
+        <div class="dashboard-cta-icon">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7" rx="1"/>
+            <rect x="14" y="3" width="7" height="7" rx="1"/>
+            <rect x="3" y="14" width="7" height="7" rx="1"/>
+            <rect x="14" y="14" width="7" height="7" rx="1"/>
+          </svg>
+        </div>
+        <div>
+          <div class="dashboard-cta-title">4-page interactive PowerBI dashboard</div>
+          <div class="dashboard-cta-desc">EVI vulnerability map · Luxury Effect scatter · Flood risk analysis · What-if scenario modelling for urban planners</div>
+          <div class="dashboard-cta-tags">
+            <span>Overview</span>
+            <span>EVI Map</span>
+            <span>Luxury Effect</span>
+            <span>Flood Risk</span>
+          </div>
+        </div>
+      </div>
+      <a href="https://drive.google.com/file/d/10n3RXCxQCZTlXc3X0cXzK1nAldnJPPa_/view?usp=sharing"
+         target="_blank" class="dashboard-cta-btn">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+          <polyline points="15 3 21 3 21 9"/>
+          <line x1="10" y1="14" x2="21" y2="3"/>
+        </svg>
+        Open Dashboard
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- TOOLS -->
-<section class="section section-alt">
+<section class="section-alt">
   <div class="section-eyebrow">Tools & technologies</div>
   <h2 class="section-title">Built with</h2>
-  <div class="tools-grid">
-    <span class="tool-pill highlight">Python</span>
-    <span class="tool-pill highlight">Google Earth Engine</span>
-    <span class="tool-pill highlight">Landsat 8/9</span>
-    <span class="tool-pill highlight">geopandas</span>
-    <span class="tool-pill highlight">geemap</span>
+  <p class="section-sub">
+    End-to-end data science pipeline from raw satellite imagery to interactive BI dashboard.
+  </p>
+  <div class="tools-wrap">
+    <span class="tool-pill hl">Python</span>
+    <span class="tool-pill hl">Google Earth Engine</span>
+    <span class="tool-pill hl">Landsat 8/9</span>
+    <span class="tool-pill hl">geopandas</span>
+    <span class="tool-pill hl">geemap</span>
     <span class="tool-pill">pandas</span>
     <span class="tool-pill">GADM boundaries</span>
-    <span class="tool-pill highlight">PowerBI</span>
+    <span class="tool-pill hl">PowerBI</span>
     <span class="tool-pill">DAX</span>
     <span class="tool-pill">ELSTAT Census 2021</span>
     <span class="tool-pill">Fire Service open data</span>
@@ -834,9 +714,9 @@
     <strong>Theofanis Kotsis</strong> · Data Science · Athens, Greece · 2025
   </div>
   <div class="footer-links">
-    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank">LinkedIn ↗</a>
-    <a href="https://github.com/YOUR_USERNAME" target="_blank">GitHub ↗</a>
-    <a href="mailto:YOUR_EMAIL">Contact ↗</a>
+    <a href="https://www.linkedin.com/in/theofanis-kotsis" target="_blank">LinkedIn ↗</a>
+    <a href="https://github.com/theofanisko" target="_blank">GitHub ↗</a>
+    <a href="mailto:theofanisko@gmail.com">Contact ↗</a>
   </div>
 </footer>
 

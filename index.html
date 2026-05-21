@@ -462,10 +462,6 @@ footer {
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-cell">
-    <div class="stat-number">+35%</div>
-    <div class="stat-label">Mean higher overall climate vulnerability in poorer vs wealthier municipalities</div>
-  </div>
-  <div class="stat-cell">
     <div class="stat-number">0.768</div>
     <div class="stat-label">Highest climate vulnerability score — Athens municipality (2024)</div>
   </div>
@@ -599,32 +595,26 @@ footer {
   </p>
   <div class="pipe-grid">
     <div class="pipe-card">
-      <div class="pipe-step">01 · 01_extract_satellite_data.py</div>
       <div class="pipe-title">Satellite extraction</div>
       <div class="pipe-desc">Landsat 8/9 Collection 2 median composites per summer (Jun–Aug) 2020–2024. Zonal statistics per municipality using GADM Level 3 boundaries. LST, NDVI, NDBI extracted at 100m resolution via Google Earth Engine.</div>
     </div>
     <div class="pipe-card">
-      <div class="pipe-step">02 · 02_extract_flood_data.py</div>
       <div class="pipe-title">Flood risk extraction</div>
       <div class="pipe-desc">Fire Service urban intervention records filtered for "ΑΝΤΛΗΣΗ ΝΕΡΟΥ" (water pumping) events across Attica 2020–2024. 2,514 flood-related incidents aggregated per municipality and year.</div>
     </div>
     <div class="pipe-card">
-      <div class="pipe-step">03 · 03_extract_socioeconomic_data.py</div>
       <div class="pipe-title">Socioeconomic data</div>
       <div class="pipe-desc">ELSTAT Census 2021 — unemployment rate per municipality (Table B02). Used as proxy for socioeconomic vulnerability, normalized 0–1 for the composite index.</div>
     </div>
     <div class="pipe-card">
-      <div class="pipe-step">04 · 04_merge_master_dataset.py</div>
       <div class="pipe-title">Master dataset merge</div>
       <div class="pipe-desc">All sources merged on normalized municipality key. 92% Landsat match rate across 66 municipalities. Remaining 8% are islands outside the GADM bounding box — expected and documented.</div>
     </div>
     <div class="pipe-card">
-      <div class="pipe-step">05 · 05_vulnerability_index.py</div>
       <div class="pipe-title">Vulnerability Index (EVI)</div>
       <div class="pipe-desc">Environmental Vulnerability Index computed as equal-weight composite. Each component normalized 0–1. EVI categorized into five levels from Very Low to Very High. Methodology based on Cutter et al. (2003).</div>
     </div>
     <div class="pipe-card">
-      <div class="pipe-step">06 · 06_prepare_powerbi_data.py</div>
       <div class="pipe-title">PowerBI preparation</div>
       <div class="pipe-desc">Final cleaning and formatting for PowerBI import. Greek municipality names added for labelling. Three output files: time series, 2024 snapshot, and master dataset.</div>
     </div>

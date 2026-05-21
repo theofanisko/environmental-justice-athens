@@ -56,9 +56,9 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
   border-bottom: 1px solid var(--forest-light);
 }
-.nav-logo { font-size: 14px; font-weight: 500; color: var(--forest-pale); letter-spacing: 0.02em; }
+.nav-logo { font-size: 15px; font-weight: 500; color: var(--forest-pale); letter-spacing: 0.02em; }
 .nav-links { display: flex; gap: 32px; }
-.nav-links a { font-size: 13px; color: var(--forest-muted); text-decoration: none; transition: color 0.2s; }
+.nav-links a { font-size: 14px; color: var(--forest-muted); text-decoration: none; transition: color 0.2s; }
 .nav-links a:hover { color: var(--forest-pale); }
 
 /* ── HERO ── */
@@ -72,7 +72,7 @@ nav {
 }
 .hero-eyebrow {
   font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--coral-mid);
   margin-bottom: 20px;
   display: flex; align-items: center; gap: 12px;
@@ -90,13 +90,13 @@ nav {
 }
 .hero-title em { color: var(--coral); font-style: italic; }
 .hero-sub {
-  font-size: 17px; color: var(--forest-muted);
+  font-size: 18px; color: var(--forest-muted);
   line-height: 1.8; max-width: 520px;
   margin-bottom: 36px;
 }
 .hero-btns { display: flex; gap: 12px; }
 .btn-primary {
-  font-size: 13px; font-weight: 500;
+  font-size: 14px; font-weight: 500;
   padding: 12px 24px;
   background: var(--coral); color: var(--white);
   border: none; border-radius: var(--radius-sm);
@@ -106,7 +106,7 @@ nav {
 }
 .btn-primary:hover { background: #C44430; transform: translateY(-1px); }
 .btn-secondary {
-  font-size: 13px; font-weight: 500;
+  font-size: 14px; font-weight: 500;
   padding: 12px 24px;
   background: transparent; color: var(--forest-pale);
   border: 1px solid var(--forest-mid);
@@ -128,11 +128,11 @@ nav {
   justify-content: center;
 }
 .hsp-big { font-family: var(--font-display); font-size: 72px; font-weight: 700; color: var(--coral); line-height: 1; margin-bottom: 10px; }
-.hsp-label { font-size: 17px; color: var(--forest-muted); line-height: 1.6; margin-bottom: 20px; }
+.hsp-label { font-size: 18px; color: var(--forest-muted); line-height: 1.6; margin-bottom: 20px; }
 .hsp-divider { height: 1px; background: rgba(255,255,255,0.1); margin-bottom: 20px; }
 .hsp-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 .hsp-mini-n { font-family: var(--font-display); font-size: 36px; font-weight: 500; color: var(--white); }
-.hsp-mini-l { font-size: 14px; color: var(--forest-dim); margin-top: 6px; line-height: 1.5; }
+.hsp-mini-l { font-size: 15px; color: var(--forest-dim); margin-top: 6px; line-height: 1.5; }
 
 /* ── STATS BAR ── */
 .stats-bar {
@@ -152,7 +152,7 @@ nav {
   margin-bottom: 8px;
 }
 .stat-number.green { color: var(--forest); }
-.stat-label { font-size: 13px; color: var(--gray-400); line-height: 1.5; }
+.stat-label { font-size: 14px; color: var(--gray-400); line-height: 1.5; }
 
 /* ── SECTION WRAPPER ── */
 .section { padding: 80px 56px; border-bottom: 1px solid var(--gray-200); }
@@ -162,7 +162,7 @@ nav {
 
 .section-eyebrow {
   font-family: var(--font-mono);
-  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+  font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--coral); margin-bottom: 14px;
 }
 .section-title {
@@ -173,7 +173,7 @@ nav {
 }
 .section-title.light { color: var(--white); }
 .section-sub {
-  font-size: 16px; color: var(--gray-600);
+  font-size: 17px; color: var(--gray-600);
   line-height: 1.85; max-width: 600px;
   margin-bottom: 48px;
 }
@@ -199,11 +199,11 @@ nav {
   font-size: 38px; font-weight: 700;
   line-height: 1; margin-bottom: 12px;
 }
-.card-title { font-size: 15px; font-weight: 500; color: var(--black); margin-bottom: 8px; }
-.card-desc { font-size: 14px; color: var(--gray-400); line-height: 1.7; }
+.card-title { font-size: 16px; font-weight: 500; color: var(--black); margin-bottom: 8px; }
+.card-desc { font-size: 15px; color: var(--gray-400); line-height: 1.7; }
 .card-tag {
   font-family: var(--font-mono);
-  font-size: 10px; letter-spacing: 0.08em;
+  font-size: 11px; letter-spacing: 0.08em;
   text-transform: uppercase; color: var(--forest-mid);
 }
 
@@ -214,25 +214,28 @@ nav {
 }
 .lux-card {
   border-radius: var(--radius);
-  padding: 36px;
+  padding: 24px 28px;
+  display: flex; align-items: center; gap: 24px;
 }
 .lux-card.green { background: var(--forest-pale); border: 1px solid #C0D8C8; }
 .lux-card.coral { background: var(--coral-light); border: 1px solid #E8C0B0; }
+.lux-card-left { flex-shrink: 0; }
+.lux-card-right { flex: 1; }
 .lux-label {
   font-family: var(--font-mono);
   font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 6px;
 }
 .lux-label.green { color: var(--forest-mid); }
 .lux-label.coral { color: var(--coral); }
 .lux-temp {
   font-family: var(--font-display);
-  font-size: 60px; font-weight: 700;
-  line-height: 1; margin-bottom: 12px;
+  font-size: 40px; font-weight: 700;
+  line-height: 1; margin-bottom: 0;
 }
 .lux-temp.green { color: var(--forest); }
 .lux-temp.coral { color: var(--coral); }
-.lux-desc { font-size: 14px; color: var(--gray-600); line-height: 1.75; }
+.lux-desc { font-size: 14px; color: var(--gray-600); line-height: 1.7; }
 .lux-delta {
   background: var(--forest);
   border-radius: var(--radius);
@@ -260,11 +263,11 @@ nav {
 .pipe-card:hover { background: rgba(255,255,255,0.09); }
 .pipe-step {
   font-family: var(--font-mono);
-  font-size: 11px; color: var(--coral-mid);
+  font-size: 12px; color: var(--coral-mid);
   letter-spacing: 0.08em; margin-bottom: 10px;
 }
-.pipe-title { font-size: 15px; font-weight: 500; color: var(--white); margin-bottom: 8px; }
-.pipe-desc { font-size: 14px; color: var(--forest-dim); line-height: 1.7; }
+.pipe-title { font-size: 16px; font-weight: 500; color: var(--white); margin-bottom: 8px; }
+.pipe-desc { font-size: 15px; color: var(--forest-dim); line-height: 1.7; }
 
 /* ── FORMULA ── */
 .formula-box {
@@ -274,7 +277,7 @@ nav {
   padding: 36px 40px;
   margin-top: 40px;
   font-family: var(--font-mono);
-  font-size: 16px; color: var(--black);
+  font-size: 17px; color: var(--black);
   line-height: 2.2;
 }
 .formula-box .coral { color: var(--coral); font-weight: 500; }
@@ -282,7 +285,7 @@ nav {
 .formula-ref {
   margin-top: 20px;
   font-family: var(--font-body);
-  font-size: 13px; color: var(--gray-400);
+  font-size: 14px; color: var(--gray-400);
   font-style: italic;
   padding-top: 20px;
   border-top: 1px solid var(--gray-200);
@@ -301,11 +304,11 @@ nav {
   border-bottom: 1px solid var(--gray-200);
   display: flex; align-items: center; justify-content: space-between;
 }
-.dashboard-title { font-size: 14px; font-weight: 500; color: var(--black); }
-.dashboard-sub { font-size: 13px; color: var(--gray-400); margin-top: 3px; }
+.dashboard-title { font-size: 15px; font-weight: 500; color: var(--black); }
+.dashboard-sub { font-size: 14px; color: var(--gray-400); margin-top: 3px; }
 .dashboard-tabs { display: flex; gap: 8px; }
 .d-tab {
-  font-size: 12px; padding: 5px 14px;
+  font-size: 13px; padding: 5px 14px;
   border-radius: var(--radius-sm);
   border: 1px solid var(--gray-200);
   color: var(--gray-400); background: var(--white);
@@ -347,7 +350,7 @@ nav {
 /* ── TOOLS ── */
 .tools-wrap { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; }
 .tool-pill {
-  font-size: 13px; padding: 7px 18px;
+  font-size: 14px; padding: 7px 18px;
   border-radius: 24px;
   border: 1px solid var(--gray-200);
   color: var(--gray-600); background: var(--white);
@@ -362,10 +365,10 @@ footer {
   padding: 44px 56px;
   display: flex; align-items: center; justify-content: space-between;
 }
-.footer-left { font-size: 13px; color: var(--forest-dim); }
+.footer-left { font-size: 14px; color: var(--forest-dim); }
 .footer-left strong { color: var(--forest-pale); font-weight: 500; }
 .footer-links { display: flex; gap: 28px; }
-.footer-links a { font-size: 13px; color: var(--forest-muted); text-decoration: none; transition: color 0.2s; }
+.footer-links a { font-size: 14px; color: var(--forest-muted); text-decoration: none; transition: color 0.2s; }
 .footer-links a:hover { color: var(--forest-pale); }
 
 /* ── ANIMATIONS ── */
@@ -558,13 +561,20 @@ footer {
   </p>
   <div class="luxury-grid">
     <div class="lux-card green">
-      <div class="lux-label green">Affluent municipalities · unemployment ≤ 12.1%</div>
-      <div class="lux-temp green">44.37°C</div>
-      <div class="lux-desc">Higher tree coverage, more parks, lower building density. The combination of vegetation and reduced impervious surfaces creates a measurable cooling effect — confirmed by five consecutive summers of Landsat imagery.</div>
+      <div class="lux-card-left">
+        <div class="lux-label green">Affluent · unemployment ≤ 12.1%</div>
+        <div class="lux-temp green">44.37°C</div>
+      </div>
+      <div class="lux-card-right">
+        <div class="lux-desc">Higher tree coverage, more parks, lower building density — confirmed by five consecutive summers of Landsat imagery.</div>
+      </div>
     </div>
     <div class="lux-card coral">
-      <div class="lux-label coral">Deprived municipalities · unemployment > 12.1%</div>
-      <div class="lux-temp coral">44.90°C</div>
+      <div class="lux-card-left">
+        <div class="lux-label coral">Deprived · unemployment > 12.1%</div>
+        <div class="lux-temp coral">44.90°C</div>
+      </div>
+      <div class="lux-card-right">
       <div class="lux-desc">Dense impervious surfaces, minimal vegetation, intensified urban heat island effect. Residents in these areas face compounded vulnerability: higher temperatures, fewer green spaces, and greater flood exposure.</div>
     </div>
   </div>
@@ -680,7 +690,7 @@ footer {
 <!-- FOOTER -->
 <footer>
   <div class="footer-left">
-    <strong>Theofanis Kotsis</strong> · Data Science · Athens, Greece · 2025
+    <strong>Theofanis Kotsis</strong> · Data Science · Ioannina, Greece · 2025
   </div>
   <div class="footer-links">
     <a href="https://www.linkedin.com/in/theofanis-kotsis" target="_blank">LinkedIn ↗</a>

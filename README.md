@@ -153,7 +153,7 @@ figure5_evi_choropleth_attica_2024.png  ← Choropleth map of EVI across Attica
 ```
 Kotsis, T. (2025). Socio-Environmental Inequality in Urban Attica: A Five-Year
 Multi-Source Assessment of Compound Climate Vulnerability Across 66 Municipalities
-(2020–2024). Submitted to Cities (Elsevier).
+(2020–2024). To be submitted 
 ```
 
 ---

@@ -421,7 +421,7 @@ footer {
     <p class="hero-sub">
       Combining satellite imagery, census data and fire service records
       to map environmental inequality across 66 Attica municipalities —
-      and show that the climate crisis does not hit everyone equally.
+      and prove the Environmental Inequality exists in Athens.
     </p>
     <div class="hero-btns">
       <a href="#dashboard" class="btn-primary">
@@ -435,7 +435,7 @@ footer {
     </div>
   </div>
   <div class="hero-stat-panel">
-    <div class="hsp-big">+3.82°C</div>
+    <div class="hsp-big">+3.83°C</div>
     <div class="hsp-label">Average temperature rise<br>across Attica · 2020 → 2024</div>
     <div class="hsp-divider"></div>
     <div class="hsp-grid">
@@ -462,16 +462,20 @@ footer {
 <!-- STATS BAR -->
 <div class="stats-bar">
   <div class="stat-cell">
+    <div class="stat-number">+0.53°C</div>
+    <div class="stat-label">EVI gap — deprived vs affluent municipalities (p &lt; 0.001; d = 1.117)</div>
+  </div>
+  <div class="stat-cell">
     <div class="stat-number">0.768</div>
-    <div class="stat-label">Highest climate vulnerability score — Athens municipality (2024)</div>
+    <div class="stat-label">Highest EVI score — Athens municipality (2024)</div>
   </div>
   <div class="stat-cell">
     <div class="stat-number green">0.231</div>
-    <div class="stat-label">Lowest climate vulnerability score — Dionysos municipality (2024)</div>
+    <div class="stat-label">Lowest EVI score — Dionysos municipality (2024)</div>
   </div>
   <div class="stat-cell">
     <div class="stat-number green">12.1%</div>
-    <div class="stat-label">Median unemployment — dividing line between wealthier and poorer municipalities</div>
+    <div class="stat-label">Median unemployment — threshold for Environmental Inequality split</div>
   </div>
 </div>
 
@@ -486,9 +490,9 @@ footer {
   <div class="cards-grid">
     <div class="card">
       <div class="card-top">
-        <div class="card-num" style="color: var(--coral)">+35%</div>
-        <div class="card-title">The inequality is real</div>
-        <div class="card-desc">Poorer municipalities face simultaneously mean higher temperatures, less greenery, and more floods — consistently, every single year from 2020 to 2024. Not by chance.</div>
+        <div class="card-num" style="color: var(--coral)">+0.53°C</div>
+        <div class="card-title">The Environmental Inequality confirmed</div>
+        <div class="card-desc">Poorer municipalities show significantly higher compound vulnerability (EVI: 0.441 vs. 0.327; p &lt; 0.001; d = 1.117) — consistently, every year from 2020 to 2024. Not by chance.</div>
       </div>
       <div class="card-bottom">
         <div class="card-tag">Temperature · LST · Cutter et al. (2003)</div>
@@ -498,7 +502,7 @@ footer {
       <div class="card-top">
         <div class="card-num" style="color: var(--forest)">−54%</div>
         <div class="card-title">Vegetation gap</div>
-        <div class="card-desc">NDVI ranges from 0.16 in Agia Varvara to 0.45 in Acharnon — a 54% gap. Wealthier peripheral municipalities consistently show higher vegetation density and lower surface temperatures.</div>
+        <div class="card-desc">NDVI ranges from 0.16 in the most urbanised municipalities to 0.45 in peripheral green ones. Vegetation cover is the dominant predictor of surface temperature (β = −1.37; p &lt; 0.001; R² = 0.48).</div>
       </div>
       <div class="card-bottom">
         <div class="card-tag">Greenery · NDVI · Landsat 8/9</div>
@@ -516,9 +520,9 @@ footer {
     </div>
     <div class="card">
       <div class="card-top">
-        <div class="card-num" style="color: var(--coral)">+3.82°C</div>
-        <div class="card-title">Attica is getting hotter</div>
-        <div class="card-desc">Average summer surface temperature rose from 40.7°C in 2020 to 44.5°C in 2024. The heat is rising — and poorer municipalities absorb it more.</div>
+        <div class="card-num" style="color: var(--coral)">44.5°C</div>
+        <div class="card-title">Peak summer LST 2024</div>
+        <div class="card-desc">Average summer Land Surface Temperature rose from 40.80°C in 2020 to 44.63°C in 2024 (+3.83°C). Poorer municipalities absorb this heat disproportionately.</div>
       </div>
       <div class="card-bottom">
         <div class="card-tag">Land Surface Temperature · 5-year trend</div>
@@ -538,7 +542,7 @@ footer {
       <div class="card-top">
         <div class="card-num" style="color: var(--gray-600)">330</div>
         <div class="card-title">Data points in master dataset</div>
-        <div class="card-desc">66 municipalities × 5 years, with LST, NDVI, NDBI, flood incidents and unemployment rate — all merged into a single analysis-ready dataset via a 6-script Python pipeline.</div>
+        <div class="card-desc">66 municipalities × 5 years, with LST, NDVI, NDBI, flood incidents and unemployment rate — all merged into a single analysis-ready dataset via an 8-script Python pipeline.</div>
       </div>
       <div class="card-bottom">
         <div class="card-tag">Python pipeline · 4 data sources</div>
@@ -550,36 +554,34 @@ footer {
 <!-- Environmental Inequality -->
 <section class="section-alt" id="luxury">
   <div class="section-eyebrow">The Environmental Inequality</div>
-  <h2 class="section-title">Wealthier areas stay cool.<br>Poorer areas overheat.</h2>
+  <h2 class="section-title">Affluent areas stay cool.<br>Deprived areas overheat.</h2>
   <p class="section-sub">
-    Municipalities were divided at the median unemployment rate (12.1%).
-    The gap in overall climate vulnerability holds consistently — every single year from 2020 to 2024.
+    Municipalities were classified at the median unemployment threshold (12.0%). The compound vulnerability gap (EVI) is statistically significant in every year from 2020 to 2024 (annual p &lt; 0.001).
   </p>
   <div class="luxury-grid">
     <div class="lux-card green">
       <div class="lux-card-left">
-        <div class="lux-label green">Wealthier municipalities · unemployment ≤ 12.1%</div>
-        <div class="lux-temp green">44.37°C Mean summer surface</div>
+        <div class="lux-label green">Wealthier municipalities · unemployment ≤ 12.0%</div>
+        <div class="lux-temp green">44.37°C</div>
       </div>
       <div class="lux-card-right">
-        <div class="lux-desc">More parks, more trees, lower building density. Green space acts as a natural air conditioner — and wealthier municipalities have significantly more of it.</div>
+        <div class="lux-desc">More parks, more trees, lower building density. Green space acts as a natural air conditioner — wealthier municipalities have more of it (mean NDVI 0.296 vs. 0.267 in deprived areas).</div>
       </div>
     </div>
     <div class="lux-card coral">
       <div class="lux-card-left">
-        <div class="lux-label coral">Poorer municipalities · unemployment > 12.1%</div>
-        <div class="lux-temp coral">44.90°C Mean summer surface</div>
+        <div class="lux-label coral">Poorer municipalities · unemployment > 12.0%</div>
+        <div class="lux-temp coral">44.90°C</div>
       </div>
       <div class="lux-card-right">
-      <div class="lux-desc">Less green space, more concrete, more floods. Residents in these areas face multiple climate pressures at once — higher heat, less shade, and greater flood exposure. Every year.
-      ity: higher temperatures, fewer green spaces, and greater flood exposure.</div>
+      <div class="lux-desc">Less green space, more concrete, more floods. Residents face multiple climate pressures simultaneously — higher heat, less shade, and greater flood exposure. Confirmed every year from 2020 to 2024.</div>
     </div>
   </div>
   <div class="lux-delta">
-    <div class="lux-delta-n">+35%</div>
+    <div class="lux-delta-n">+0.114 EVI</div>
     <div class="lux-delta-text">
-      Poorer municipalities show 35% mean higher overall climate vulnerability than wealthier ones —
-      consistently, every year from 2020 to 2024.
+      Compound vulnerability gap confirmed: EVI 0.441 vs. 0.327 (Δ = +0.114; p &lt; 0.001; d = 1.117).
+      Structurally persistent in every year from 2020 to 2024.
       This is not a coincidence. It is a structural pattern.
     </div>
   </div>
@@ -595,26 +597,32 @@ footer {
   </p>
   <div class="pipe-grid">
     <div class="pipe-card">
+      <div class="pipe-step">01 · 01_extract_satellite_data.py</div>
       <div class="pipe-title">Satellite extraction</div>
       <div class="pipe-desc">Landsat 8/9 Collection 2 median composites per summer (Jun–Aug) 2020–2024. Zonal statistics per municipality using GADM Level 3 boundaries. LST, NDVI, NDBI extracted at 100m resolution via Google Earth Engine.</div>
     </div>
     <div class="pipe-card">
+      <div class="pipe-step">02 · 02_extract_flood_data.py</div>
       <div class="pipe-title">Flood risk extraction</div>
       <div class="pipe-desc">Fire Service urban intervention records filtered for "ΑΝΤΛΗΣΗ ΝΕΡΟΥ" (water pumping) events across Attica 2020–2024. 2,514 flood-related incidents aggregated per municipality and year.</div>
     </div>
     <div class="pipe-card">
+      <div class="pipe-step">03 · 03_extract_socioeconomic_data.py</div>
       <div class="pipe-title">Socioeconomic data</div>
       <div class="pipe-desc">ELSTAT Census 2021 — unemployment rate per municipality (Table B02). Used as proxy for socioeconomic vulnerability, normalized 0–1 for the composite index.</div>
     </div>
     <div class="pipe-card">
+      <div class="pipe-step">04 · 04_merge_master_dataset.py</div>
       <div class="pipe-title">Master dataset merge</div>
       <div class="pipe-desc">All sources merged on normalized municipality key. 92% Landsat match rate across 66 municipalities. Remaining 8% are islands outside the GADM bounding box — expected and documented.</div>
     </div>
     <div class="pipe-card">
+      <div class="pipe-step">05 · 05_vulnerability_index.py</div>
       <div class="pipe-title">Vulnerability Index (EVI)</div>
       <div class="pipe-desc">Environmental Vulnerability Index computed as equal-weight composite. Each component normalized 0–1. EVI categorized into five levels from Very Low to Very High. Methodology based on Cutter et al. (2003).</div>
     </div>
     <div class="pipe-card">
+      <div class="pipe-step">06 · 06_prepare_powerbi_data.py</div>
       <div class="pipe-title">PowerBI preparation</div>
       <div class="pipe-desc">Final cleaning and formatting for PowerBI import. Greek municipality names added for labelling. Three output files: time series, 2024 snapshot, and master dataset.</div>
     </div>
@@ -638,11 +646,11 @@ footer {
   <div class="section-eyebrow">Interactive dashboard</div>
   <h2 class="section-title">Explore the data</h2>
   <p class="section-sub">
-    Five-page PowerBI dashboard — EVI vulnerability map, Environmental Inequality analysis,
+    Four-page PowerBI dashboard — EVI vulnerability map, Environmental Inequality analysis,
     flood risk trends and what-if scenario modelling for urban planners and policymakers.
   </p>
   <div style="margin-top: 40px;">
-    <a href="https://drive.google.com/drive/folders/13RVXMIKkYylWQr-72wx4xwVgXe7PaQnu"
+    <a href="https://drive.google.com/file/d/10n3RXCxQCZTlXc3X0cXzK1nAldnJPPa_/view?usp=sharing"
        target="_blank" class="btn-primary">
       <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
         <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
@@ -659,7 +667,7 @@ footer {
   <div class="section-eyebrow">Tools & technologies</div>
   <h2 class="section-title">Built with</h2>
   <p class="section-sub">
-    End-to-end data science pipeline from raw satellite imagery to Power BI dashboard.
+    End-to-end data science pipeline from raw satellite imagery to interactive BI dashboard.
   </p>
   <div class="tools-wrap">
     <span class="tool-pill hl">Python</span>
